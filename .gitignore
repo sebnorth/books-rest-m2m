@@ -1,0 +1,9 @@
+*.pyc
+__pycache__
+myvenv
+rozne
+db.sqlite3
+.DS_Store
+*.odt
+new.txt
+task.txt
