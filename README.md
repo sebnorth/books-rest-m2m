@@ -1,6 +1,6 @@
 # books-rest-m2m
 
-## Aplikacja tworzy REST API dla CRUD-a dla następującej logiki:
+## Aplikacja tworzy REST API dla operacji CRUD dla następującej logiki:
 
 - Użytkownik posiada listę ulubionych książek, 
 - Książka z Autorem jest relacją typu Many2Many
