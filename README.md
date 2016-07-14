@@ -100,49 +100,49 @@ dlatego proponuję na początek zalogować się supersuerem.
 
 2. W tym widoku zrobimy PUT:
 
-{
-"last_name": "Wheeler123",
-"username": "cwheeler0",
-"password": "au3s9SfAsQN"
-}
+  {
+  "last_name": "Wheeler123",
+  "username": "cwheeler0",
+  "password": "au3s9SfAsQN"
+  }
 
 
 3. Dodamy paru autorów i parę książek
 
-"authors": "http://127.0.0.1:8000/authors/",
-
-"books": "http://127.0.0.1:8000/books/"
-
-Autorzy:
-
-{"first_name": "Robert","last_name": "Lewandowski"}
-
-{"first_name": "Kuba","last_name": "Błaszczykowski"}
-
-{"first_name": "Arkadiusz","last_name": "Milik"}
-
-Książki
-
-{
-    "title": "Euro 2016",
-    "authors": [{"first_name": "Robert","last_name": "Lewandowski"}],
-    "user": 1
-}
-
-{
-    "title": "Moje gole",
-    "authors": [{"first_name": "Kuba","last_name": "Błaszczykowski"}],
-    "user": 1
-}
-
-
-{
-    "title": "Jak pokonaliśmy Szwajcarię.",
-    "authors": [{"first_name": "Robert","last_name": "Lewandowski"}, {"first_name": "Arkadiusz","last_name": "Milik"}],
-    "user": 2
-}
-
-Książki i autorów może dodawać każdy zalogowany użytkownik('DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',))
+  "authors": "http://127.0.0.1:8000/authors/",
+  
+  "books": "http://127.0.0.1:8000/books/"
+  
+  Autorzy:
+  
+  {"first_name": "Robert","last_name": "Lewandowski"}
+  
+  {"first_name": "Kuba","last_name": "Błaszczykowski"}
+  
+  {"first_name": "Arkadiusz","last_name": "Milik"}
+  
+  Książki
+  
+  {
+      "title": "Euro 2016",
+      "authors": [{"first_name": "Robert","last_name": "Lewandowski"}],
+      "user": 1
+  }
+  
+  {
+      "title": "Moje gole",
+      "authors": [{"first_name": "Kuba","last_name": "Błaszczykowski"}],
+      "user": 1
+  }
+  
+  
+  {
+      "title": "Jak pokonaliśmy Szwajcarię.",
+      "authors": [{"first_name": "Robert","last_name": "Lewandowski"}, {"first_name": "Arkadiusz","last_name": "Milik"}],
+      "user": 2
+  }
+  
+  Książki i autorów może dodawać każdy zalogowany użytkownik('DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',))
 
 4. Dla zalogowanego superusera w widoku UserList można odkomentować #authentication_classes = (JSONWebTokenAuthentication, ), następnie uzyskać token: http://127.0.0.1:8000/api-token-auth/
 
