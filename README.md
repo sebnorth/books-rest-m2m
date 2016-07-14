@@ -84,19 +84,19 @@ dlatego proponuję na początek zalogować się supersuerem.
 
 1. Dodamy użytkownika cwheeler0 z listy powyżej
 
-w http://127.0.0.1:8000/users/ w pole content wpisujemy: 
-
-{
-  "first_name": "Charles",
-  "last_name": "Wheeler",
-  "email": "cwheeler0@oracle.com",
-  "username": "cwheeler0",
-  "password": "au3s9SfAsQN"
-}
-
-i zatwierdzamy przyciskiem POST, następnie odświeżamy http://127.0.0.1:8000/users/
-
-Użytkownik cwheeler0 będzie miał id=2 jeśli wcześniej nie tworzyliśmy żadnego użytkownika, będzie miał dostęp po zalogowaniu tylko do widoku  http://127.0.0.1:8000/users/2/
+  w http://127.0.0.1:8000/users/ w pole content wpisujemy: 
+  
+  {
+    "first_name": "Charles",
+    "last_name": "Wheeler",
+    "email": "cwheeler0@oracle.com",
+    "username": "cwheeler0",
+    "password": "au3s9SfAsQN"
+  }
+  
+  i zatwierdzamy przyciskiem POST, następnie odświeżamy http://127.0.0.1:8000/users/
+  
+  Użytkownik cwheeler0 będzie miał id=2 jeśli wcześniej nie tworzyliśmy żadnego użytkownika, będzie miał dostęp po zalogowaniu tylko do widoku  http://127.0.0.1:8000/users/2/
 
 2. W tym widoku zrobimy PUT:
 
