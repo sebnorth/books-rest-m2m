@@ -1,5 +1,7 @@
 # books-rest-m2m
 
+### instalacja
+
 cd C:\Users\sebnorth\workspace\django\roboczy
 
 git clone https://github.com/sebnorth/books-rest-m2m.git
@@ -24,40 +26,14 @@ python manage.py runserver
 
 http://127.0.0.1:8000/
 
-teraz są dwie opcje:
+### Obłsuga aplikacji
 
-albo trzeba się zalogować supersuerem albo wejść na http://127.0.0.1:8000/register i się zarejestrować a następnie zalogować
+Na początku trzeba się zalogować supersuerem albo wejść na http://127.0.0.1:8000/register i się zarejestrować a następnie zalogować. 
 
 http://127.0.0.1:8000/users/ widzi tylko osoba z permission_classes =(IsAdminUser, )
-dlatego proponuję na początek zalogować się supersuerem
+dlatego proponuję na początek zalogować się supersuerem. 
 
-przykładowe aktywności: 
-
-1. dodamy użytkownika cwheeler0 z listy poniżej
-
-w http://127.0.0.1:8000/users/ w pole content wpisujemy: 
-
-{
-  "first_name": "Charles",
-  "last_name": "Wheeler",
-  "email": "cwheeler0@oracle.com",
-  "username": "cwheeler0",
-  "password": "au3s9SfAsQN"
-}
-
-i zatwierdzamy przyciskiem POST, następnie odświeżamy http://127.0.0.1:8000/users/
-
-Użytkownik cwheeler0 będzie miał id=2 jeśli wcześniej nie tworzyliśmy żadnego użytkownika, będzie miał dostęp po zalogowaniu tylko do widoku  http://127.0.0.1:8000/users/2/
-
-W tym widoku zrobimy PUT:
-
-{
-"last_name": "Wheeler123",
-"username": "cwheeler0",
-"password": "au3s9SfAsQN"
-}
-
-przykładowe dane: 
+#### przykładowe dane: 
 
 {
   "first_name": "Charles",
@@ -99,7 +75,34 @@ przykładowe dane:
   "password": "3NupG2"
 }
 
-dodamy paru autorów i parę książek
+### Przykładowe aktywności: 
+
+1. Dodamy użytkownika cwheeler0 z listy powyżej
+
+w http://127.0.0.1:8000/users/ w pole content wpisujemy: 
+
+{
+  "first_name": "Charles",
+  "last_name": "Wheeler",
+  "email": "cwheeler0@oracle.com",
+  "username": "cwheeler0",
+  "password": "au3s9SfAsQN"
+}
+
+i zatwierdzamy przyciskiem POST, następnie odświeżamy http://127.0.0.1:8000/users/
+
+Użytkownik cwheeler0 będzie miał id=2 jeśli wcześniej nie tworzyliśmy żadnego użytkownika, będzie miał dostęp po zalogowaniu tylko do widoku  http://127.0.0.1:8000/users/2/
+
+2. W tym widoku zrobimy PUT:
+
+{
+"last_name": "Wheeler123",
+"username": "cwheeler0",
+"password": "au3s9SfAsQN"
+}
+
+
+3. Dodamy paru autorów i parę książek
 
 "authors": "http://127.0.0.1:8000/authors/",
 
@@ -136,8 +139,8 @@ Książki
 
 Książki i autorów może dodawać każdy zalogowany użytkownik('DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',))
 
-Dla zalogowanego superusera w widoku UserList można odkomentować #authentication_classes = (JSONWebTokenAuthentication, ), następnie uzyskać token: http://127.0.0.1:8000/api-token-auth/
+4. Dla zalogowanego superusera w widoku UserList można odkomentować #authentication_classes = (JSONWebTokenAuthentication, ), następnie uzyskać token: http://127.0.0.1:8000/api-token-auth/
 
 i z konsoli wykonać coś w stylu:
- 
+
 curl.exe -H "Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IiIsInVzZXJuYW1lIjoiTHVkd2lrIiwidXNlcl9pZCI6NiwiZXhwIjoxNDY4NDUyMDk2fQ.XWUknceOtruPHyq7C5fpnE3ffWbPu9HbK5iBglBg2js" http://127.0.0.1:8000/users/
