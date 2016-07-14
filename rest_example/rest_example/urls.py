@@ -21,7 +21,8 @@ from restapp import views
 
 from restapp.views import AuthorViewSet, BookViewSet
 from rest_framework.routers import DefaultRouter
-
+    
+from rest_framework_jwt.views import obtain_jwt_token
 
 router = DefaultRouter()
 router.register(r'authors', AuthorViewSet)
@@ -32,10 +33,18 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^users/(?P<pk>[0-9]+)/$', views.UserDetail.as_view()),
-    url(r'^users/', views.UserList.as_view())  
+    url(r'^users/', views.UserList.as_view()),
+    url(r'^login/$', views.user_login, name='login'),
+    url(r'^logout/$', views.user_logout, name='logout'), 
+    url(r'^register/$', views.register, name='register'),
+    url(r'^api-token-auth/', obtain_jwt_token),
 ]
 
 urlpatterns+=router.urls
 
+urlpatterns += [
+    url(r'^api-auth/', include('rest_framework.urls',
+                               namespace='rest_framework')),
+]
 
 
