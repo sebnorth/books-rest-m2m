@@ -1,6 +1,11 @@
 # books-rest-m2m
 
-### instalacja
+## Aplikacja tworzy REST API dla CRUD-a dla następującej logiki:
+
+- Użytkownik posiada listę ulubionych książek, 
+- Książka z Autorem jest relacją typu Many2Many
+
+### Instalacja
 
 cd C:\Users\sebnorth\workspace\django\roboczy
 
@@ -77,7 +82,7 @@ dlatego proponuję na początek zalogować się supersuerem.
 
 ### Przykładowe aktywności: 
 
-1 Dodamy użytkownika cwheeler0 z listy powyżej
+1. Dodamy użytkownika cwheeler0 z listy powyżej
 
 w http://127.0.0.1:8000/users/ w pole content wpisujemy: 
 
@@ -93,7 +98,7 @@ i zatwierdzamy przyciskiem POST, następnie odświeżamy http://127.0.0.1:8000/u
 
 Użytkownik cwheeler0 będzie miał id=2 jeśli wcześniej nie tworzyliśmy żadnego użytkownika, będzie miał dostęp po zalogowaniu tylko do widoku  http://127.0.0.1:8000/users/2/
 
-2 W tym widoku zrobimy PUT:
+2. W tym widoku zrobimy PUT:
 
 {
 "last_name": "Wheeler123",
@@ -102,7 +107,7 @@ Użytkownik cwheeler0 będzie miał id=2 jeśli wcześniej nie tworzyliśmy żad
 }
 
 
-3 Dodamy paru autorów i parę książek
+3. Dodamy paru autorów i parę książek
 
 "authors": "http://127.0.0.1:8000/authors/",
 
@@ -139,7 +144,7 @@ Książki
 
 Książki i autorów może dodawać każdy zalogowany użytkownik('DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',))
 
-4 Dla zalogowanego superusera w widoku UserList można odkomentować #authentication_classes = (JSONWebTokenAuthentication, ), następnie uzyskać token: http://127.0.0.1:8000/api-token-auth/
+4. Dla zalogowanego superusera w widoku UserList można odkomentować #authentication_classes = (JSONWebTokenAuthentication, ), następnie uzyskać token: http://127.0.0.1:8000/api-token-auth/
 
 i z konsoli wykonać coś w stylu:
 
