@@ -146,6 +146,6 @@ dlatego proponuję na początek zalogować się supersuerem.
 
 4. Dla zalogowanego superusera w widoku UserList można odkomentować #authentication_classes = (JSONWebTokenAuthentication, ), następnie uzyskać token: http://127.0.0.1:8000/api-token-auth/
 
-i z konsoli wykonać coś w stylu:
-
-curl.exe -H "Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IiIsInVzZXJuYW1lIjoiTHVkd2lrIiwidXNlcl9pZCI6NiwiZXhwIjoxNDY4NDUyMDk2fQ.XWUknceOtruPHyq7C5fpnE3ffWbPu9HbK5iBglBg2js" http://127.0.0.1:8000/users/
+  i z konsoli wykonać coś w stylu:
+  
+  curl.exe -H "Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IiIsInVzZXJuYW1lIjoiTHVkd2lrIiwidXNlcl9pZCI6NiwiZXhwIjoxNDY4NDUyMDk2fQ.XWUknceOtruPHyq7C5fpnE3ffWbPu9HbK5iBglBg2js" http://127.0.0.1:8000/users/
